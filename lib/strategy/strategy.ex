@@ -125,12 +125,10 @@ defmodule ClusterEcs.Strategy do
              {:ok, ips} <- extract_ips(desc_task_body) do
 
           resp = ips |> Enum.map(&(ip_to_nodename(&1, app_prefix)))
-          IO.inspect(resp)
 
           {:ok, MapSet.new(resp)}
         else
           err ->
-            IO.inspect(err)
             {:error, []}
         end
 
