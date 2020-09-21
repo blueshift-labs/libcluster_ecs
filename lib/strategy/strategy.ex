@@ -34,7 +34,7 @@ defmodule ClusterEcs.Strategy do
   def start_link(opts) do
     Application.ensure_all_started(:tesla)
     Application.ensure_all_started(:ex_aws)
-    GenServer.start_link(__MODULE__, opts)
+    GenServer.start_link(__MODULE__, opts, name: ClusterEcsGenServer)
   end
 
   # libcluster ~> 3.0
