@@ -129,7 +129,7 @@ defmodule ClusterEcs.Strategy do
           {:ok, MapSet.new(resp)}
         else
           err ->
-            {:error, []}
+            {:error, err}
         end
 
       region == "" ->
